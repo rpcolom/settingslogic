@@ -204,4 +204,13 @@ describe "Settingslogic" do
     end
   end
 
+  # rspec-core issue 620
+  it "should not blow up if #to_ary is called on it via Array#flatten" do
+    lambda {
+      [ Settings, ['a'] ].flatten
+    }.should_not raise_error
+
+    [Settings, ['a']].flatten.should == [Settings, 'a']
+  end
+
 end

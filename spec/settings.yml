@@ -5,6 +5,9 @@ setting1:
     child:
       value: 2
 
+setting1b:
+  setting1_child: saweet_b
+
 setting2: 5
 setting3: <%= 5 * 5 %>
 name: test

@@ -213,4 +213,13 @@ describe "Settingslogic" do
     [Settings, ['a']].flatten.should == [Settings, 'a']
   end
 
+  it "should change the namespace" do
+    Settings2.namespace.should == 'setting1'
+    Settings2.setting1_child.should == "saweet"
+
+    Settings2.namespace 'setting1b'
+    Settings2.reload!
+    Settings2.setting1_child.should == "saweet_b"
+  end
+
 end

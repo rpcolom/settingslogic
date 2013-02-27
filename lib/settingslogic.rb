@@ -26,6 +26,7 @@ class Settingslogic < Hash
     end
 
     def namespace(value = nil)
+      @namespace=value unless value.nil?
       @namespace ||= value
     end
 

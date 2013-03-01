@@ -115,6 +115,7 @@ class Settingslogic < Hash
   # Otherwise, create_accessors! (called by new) will have created actual methods for each key.
   def method_missing(name, *args, &block)
     super if name === :to_ary # delegate to_ary to Hash
+    #super if name === :to_str # delegate to Hash
     key = name.to_s
     return missing_key("Missing setting '#{key}' in #{@section}") unless has_key? key
     value = fetch(key)
